@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
  * main - Checks for last number using modulo
@@ -21,4 +22,3 @@ int main(void)
 		printf("Last digit of %i is %i and is 0", n , m)
 	return (0);
 }
-
