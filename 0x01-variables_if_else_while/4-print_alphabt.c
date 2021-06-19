@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - printing alphabet without q and e
  * 
@@ -8,7 +7,6 @@
 int main(void)
 {
 	char c = 'a';
-
 	while (c <= 'z')
 	{
 		if (c != 'q' && c != 'e')
