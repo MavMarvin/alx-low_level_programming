@@ -7,11 +7,11 @@
  */
 int print_sign(int n)
 {
-	if (A > 0)
+	if (c > 0)
         	return (1);
-        else if (A == 0)
+        else if (c == 0)
         	return (0);
-    	else if (A < 0)
+    	else if (c < 0)
         	return (-1);
     	_putchar('\n');
 }
