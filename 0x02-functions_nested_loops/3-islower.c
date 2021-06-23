@@ -1,17 +1,14 @@
 #include "holberton.h"
 
 /**
- * print_alphabet_x10 - Print the alphabet 10 times
+ * _islower - Checks for lowercase
  * Return: Always 0 (Success)
  */
 int _islower(int c)
 {
 	if (c >= 'a' && c <= 'z')
-	{
 		return (1);
-	} else
-	{
+	else
 		return (0);
-	}
 	_putchar('\n');
 }
