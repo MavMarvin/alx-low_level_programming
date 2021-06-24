@@ -2,7 +2,7 @@
 
 /**
  * print_most_numbers - Print numbers without 2 and 4
- * Description: Can only use _putchar twice.
+ * Return: numbers without 2 and 4
  */
 void print_most_numbers(void)
 {
