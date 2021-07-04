@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * puta_half - print half of a string
+ * puts_half - print half of a string
  * @str: string
   * Description: If odd number of chars, print (length - 1) / 2
  */
