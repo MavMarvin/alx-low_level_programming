@@ -1,5 +1,7 @@
 #include "holberton.h"
 
+#define rotn 13
+
 /**
  * rot13 - rotate characters 13 places in the alphabet
  * @s: string
