@@ -1,26 +1,60 @@
-#include "holberton.h"
-
 #define rotn 13
 
+char get_rot(char);
 /**
- * rot13 - rotate characters 13 places in the alphabet
- * @s: string
- * Return: string `s` rotated
+ * rot13 - encode str to rot13
+ *
+ * @str: string to convert
+ *
+ * Return: pointer to str
  */
-
-char *rot13(char *s)
+char *rot13(char *str)
 {
-	int i;
-	char storeh[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-	char storel[] = "nopqrstuvwxyzabcdefghijklm";
+	char temp;
+	int i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (str[i] != '\0')
 	{
-		if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123))
-		{
-			s[i] = (s[i] - 65 > 25) ?
-				storel[s[i] - 97] : storeh[s[i] - 65];
-		}
+		temp = get_rot(str[i]);
+		if (temp != 0)
+			str[i] = temp;
+		i++;
 	}
-	return (s);
+	return (str);
+}
+/**
+ * get_rot - gets leet character for english char
+ *
+ * @conv: english character to convert/check
+ *
+ * Return: char rot13 representation
+ */
+char get_rot(char conv)
+{
+	char alphabet[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
+			   'h', 'i', 'j', 'k', 'l', 'm', 'n',
+			   'o', 'p', 'q', 'r', 's', 't', 'u',
+			   'v', 'w', 'x', 'y', 'z',
+			   'A', 'B', 'C', 'D', 'E', 'F', 'G',
+			   'H', 'I', 'J', 'K', 'L', 'M', 'N',
+			   'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+			   'V', 'W', 'X', 'Y', 'Z', 0};
+	int rotTranslate[] = { rotn, rotn, rotn, rotn, rotn,
+			       rotn, rotn, rotn, rotn, rotn,
+			       rotn, rotn, rotn, -(rotn), -(rotn),
+			       -(rotn), -(rotn), -(rotn), -(rotn), -(rotn),
+			       -(rotn), -(rotn), -(rotn), -(rotn), -(rotn),
+			       -(rotn), /* end lowercase */
+			       rotn, rotn, rotn, rotn, rotn,
+			       rotn, rotn, rotn, rotn, rotn,
+			       rotn, rotn, rotn, -(rotn), -(rotn),
+			       -(rotn), -(rotn), -(rotn), -(rotn), -(rotn),
+			       -(rotn), -(rotn), -(rotn), -(rotn), -(rotn),
+			       -(rotn), 0};
+	int arrSize = 26 * 2;
+	int i = 0;
+
+	while (conv != alphabet[i] && i < arrSize)
+		i++;
+	return (alphabet[i] + rotTranslate[i]);
 }
