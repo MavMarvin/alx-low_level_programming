@@ -8,5 +8,10 @@
 
 void _puts_recursion(char *s)
 {
-	return ("Betty Holberton\n");
+	s = "Betty Holberton";
+
+	_putchar(s);
+
+	_putchar('\n');
+	return 0;
 }
