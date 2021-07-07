@@ -1,17 +1,17 @@
 #include "holberton.h"
 
 /**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
+ * _puts_recursion - Print a string
+ * @s: string
  */
 
 void _puts_recursion(char *s)
 {
-	s = "Betty Holberton";
-
-	_putchar(s);
-
-	_putchar('\n');
-	return 0;
+	if (*s == '\0')
+		_putchar('\n');
+	else
+	{
+		_putchar(*s);
+		_puts_recursion(++s);
+	}
 }
