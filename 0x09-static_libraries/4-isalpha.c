@@ -5,6 +5,7 @@
  * @c: The character in ASCII code
  * Return: Always 1 (Success)
  */
+
 int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
