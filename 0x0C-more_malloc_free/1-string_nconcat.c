@@ -27,7 +27,7 @@ unsigned int size1 = 0, size2 = 0, i;
 	n = size2;
 	p = malloc((size1 + n + 1) * sizeof(char));
 	if (p == NULL)
-	return (0);
+	return (NULL);
 	for (i = 0; i < size1; i++)
 	{
 		p[i] = s1[i];
